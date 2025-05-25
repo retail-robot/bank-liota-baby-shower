@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Liota Baby Shower</title>
+    <style>
+
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            text-align: center;
+        }
+
+        h2,h3,h4{
+            margin-top: 1.3em;
+            margin-bottom: .33em;
+        }
+
+        p{
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        main {
+            width: 86ch;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        @media (orientation: portrait) {
+            body{
+                padding: 0 1rem;
+            }
+        }
+
+        .map{
+            width: 100%;
+            height: 16rem;
+        }
+
+        .longform-content{
+            text-align: left;
+        }
+
+        #babyEta{
+            font-family: monospace;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>A Very Bank Liota Baby Shower</h1>
+    <main>
+        <h2>When</h2>
+        <p>
+            June 22<sup>nd</sup> 2025, 1pm - 6pm
+            (<span id="showerDate"></span>)
+        </p>
+        <h2>
+            Where
+        </h2>
+        <p>
+            Riverbank State Park
+        </p>
+        <div>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d763.5971407551856!2d-73.95676173037805!3d40.82775401299624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ5JzM5LjkiTiA3M8KwNTcnMjIuMCJX!5e1!3m2!1sen!2sus!4v1748137574569!5m2!1sen!2sus" 
+                style="border:0;" allowfullscreen="" loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="longform-content">
+            <h2>
+                What to bring
+            </h2>
+            <p>
+                Please bring yourself, and some snacks and or drinks (maybe a blanket?) and sunscreen. The Parks Department says we're 
+                not allowed to bring alcoholic beverages.
+            </p>
+            <h2>
+                Registry
+            </h2>
+            <p>
+                <a href="https://my.babylist.com/bank-liota" target="_blank">our registry</a>
+            </p>
+            <h2>
+                Getting there
+            </h2>
+            <h3>
+                Public transit
+            </h3>
+            <p>
+                The park is closest to the 145<sup>th</sup> Street stop on the 1, but the A,C,D, and B are only one block further 
+                (also 145<sup>th</sup>). The BX19 and M11 also stop directly in the park.
+            </p>
+            <h4>
+                Handy References
+            </h4>
+            <ul>
+                <li><a href="https://www.mta.info/" target="_blank">MTA website (has a trip planner!)</a></li>
+                <li><a href="https://www.mta.info/map/32906" target="_blank">Weekend Subway Map</a></li>
+            </ul>
+            <h3>
+                Parking
+            </h3>
+            <p>
+                Parking is available, but it's underneath the park. You may be able to find on-street parking in
+                the area, but if you can't or want to park under the park, you can get a parking permit from the attendant at 
+                the entrance booth, and theres a shuttle from the parking lot back to the park.
+            </p>
+        </div>
+        <h2>
+            Where to pee
+        </h2>
+        <div>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d734.4110186821167!2d-73.95644662092312!3d40.8265529894681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f66196bbf63f%3A0x7079f57784ba2831!2sRiverbank%20State%20Park!5e1!3m2!1sen!2sus!4v1748143246009!5m2!1sen!2sus" 
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <h2>Baby ETA:</h2>
+        <div id="babyEta"></div> (we dont know for sure, but its more dramatic with the seconds, isnt it?)
+    </main>
+    <script>
+        function numberPad(num){
+            return num < 10 ? `0${num}` : num
+        }
+        const dueDate = new Date('2025-08-27');
+        const showerDueDate = new Date('2025-06-22 13:00:00.0 GMT-0400')
+
+        function getETA(reference){
+            const now = new Date()
+            const timeLeft = reference.getTime()-now.getTime();
+
+
+            const daysLeft = Math.floor(timeLeft /1000 / 60/60/24)
+            const hoursLeft = Math.floor((timeLeft /1000 / 60/60)%24)
+            const minutesLeft = Math.floor((timeLeft /1000 / 60)%60)
+            const secondsLeft = Math.floor((timeLeft /1000)%60)
+
+            return `${daysLeft}d, ${numberPad(hoursLeft)}:${numberPad(minutesLeft)}:${numberPad(secondsLeft)}`
+
+        }
+        babyEta.innerHTML = getETA(dueDate)
+        showerDate.innerHTML = getETA(showerDueDate)
+        window.setInterval(function(){
+            showerDate.innerHTML = getETA(showerDueDate)
+            babyEta.innerHTML = getETA(dueDate)
+        }, 1000)
+    </script>
+</body>
+</html>
