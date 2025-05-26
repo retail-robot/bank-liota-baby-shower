@@ -9,11 +9,75 @@
         body{
             font-family: Verdana, Geneva, Tahoma, sans-serif
         }
-
         h1 {
             font-size: 3rem;
             text-align: center;
-            text-align: center;
+        }
+
+        @media (max-width: 715px) {
+
+            h1{
+                color: #e5fff6;
+                text-shadow: 0px 4px 6px black;
+            }
+
+            .image-grid {    
+                color: #e5fff6;
+                text-shadow: 1px 2px 3px black;
+            }
+
+            .the-couple{
+                position: absolute;
+                z-index: -2;
+                left: 0;
+                right: 0;
+                width: 100%;
+                display: inline-block;
+                bottom: -10%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .the-couple{
+                top:0;
+            }
+        }
+        
+        @media (min-width: 716px) {
+
+            .image-grid{
+                display: grid;
+                grid-template-areas: 
+                    'a b' 
+                    'a c'
+                    'a c'
+                    'a c';
+
+                grid-template-columns: 18rem 3fr;
+                grid-template-rows: 1fr 4fr;
+                gap: 1rem;
+            }
+
+            .image-grid img{
+                grid-area: a;
+                width: 100%;
+            }
+            .image-grid .image-grid-upper-right{
+                grid-area: b;
+            }
+            .image-grid h2{
+                margin-top: 0;
+            }
+
+            .image-grid .image-grid-lower-right{
+                grid-area: c;
+                display: flex;
+                flex-direction: column;
+            }
+            .image-grid-lower-right .map{
+                flex-grow: 1;
+            }
         }
 
         h2,h3,h4{
@@ -54,31 +118,36 @@
     </style>
 </head>
 <body>
-    <h1>A Very Bank Liota Baby Shower</h1>
+    <h1>A Very Bank<br/>Liota Baby Shower<br/>Picnic</h1>
     <main>
-        <h2>When</h2>
-        <p>
-            June 22<sup>nd</sup> 2025, 1pm - 6pm
-            (<span id="showerDate"></span>)
-        </p>
-        <h2>
-            Where
-        </h2>
-        <p>
-            Riverbank State Park
-        </p>
-        <div>
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d763.5971407551856!2d-73.95676173037805!3d40.82775401299624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ5JzM5LjkiTiA3M8KwNTcnMjIuMCJX!5e1!3m2!1sen!2sus!4v1748137574569!5m2!1sen!2sus" 
+        <div class="image-grid">
+            <img class="the-couple" src="the-couple.jpg">
+            <div class="image-grid-upper-right">
+                <h2>When</h2>
+                <p>
+                    June 22<sup>nd</sup> 2025, 1pm - 6pm
+                    (<span id="showerDate"></span>)
+                </p>
+            </div>
+            <div class="image-grid-lower-right">
+                <h2>
+                    Where
+                </h2>
+                <p>
+                    Riverbank State Park
+                </p>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d763.5971407551856!2d-73.95676173037805!3d40.82775401299624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ5JzM5LjkiTiA3M8KwNTcnMjIuMCJX!5e1!3m2!1sen!2sus!4v1748137574569!5m2!1sen!2sus" 
                 style="border:0;" allowfullscreen="" loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
         <div class="longform-content">
             <h2>
                 What to bring
             </h2>
             <p>
-                Please bring yourself, and some snacks and or drinks (maybe a blanket?) and sunscreen. The Parks Department says we're 
-                not allowed to bring alcoholic beverages.
+                Please bring yourself, and some snacks and/or drinks to share. (Maybe a cooler and a blanket too? 
+                Definitely sunscreen.) The Parks Department says we're not allowed to bring alcoholic beverages.
             </p>
             <h2>
                 Registry
