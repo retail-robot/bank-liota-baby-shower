@@ -21,7 +21,8 @@
                 text-shadow: 0px 4px 6px black;
             }
 
-            .image-grid {    
+            .image-grid {
+                padding: 0 1rem 1rem 1rem;
                 color: #e5fff6;
                 text-shadow: 1px 2px 3px black;
             }
@@ -55,7 +56,7 @@
                     'a c';
 
                 grid-template-columns: 18rem 3fr;
-                grid-template-rows: 1fr 4fr;
+                grid-template-rows: 1fr 3fr;
                 gap: 1rem;
             }
 
@@ -96,12 +97,6 @@
             margin: auto;
         }
 
-        @media (orientation: portrait) {
-            body{
-                padding: 0 1rem;
-            }
-        }
-
         .map{
             width: 100%;
             height: 16rem;
@@ -109,7 +104,19 @@
 
         .longform-content{
             text-align: left;
+            background-color: #ffffff;
         }
+
+
+        @media (max-width: 715px) {
+            .longform-content{
+                padding: 1rem;
+            }
+            .longform-content h2:first-child{
+                margin-top: 0;
+            }
+        }
+
 
         #babyEta{
             font-family: monospace;
@@ -125,8 +132,11 @@
             <div class="image-grid-upper-right">
                 <h2>When</h2>
                 <p>
-                    June 22<sup>nd</sup> 2025, 1pm - 6pm
-                    (<span id="showerDate"></span>)
+                    June 22<sup>nd</sup> 2025, 1pm-6pm (come when you can!)
+                    
+                </p>
+                <p>
+                    Event in <span id="showerDate"></span>
                 </p>
             </div>
             <div class="image-grid-lower-right">
@@ -147,7 +157,12 @@
             </h2>
             <p>
                 Please bring yourself, and some snacks and/or drinks to share. (Maybe a cooler and a blanket too? 
-                Definitely sunscreen.) The Parks Department says we're not allowed to bring alcoholic beverages.
+                Definitely sunscreen.) 
+            </p>
+            <p>
+                The Parks Department says we're not allowed to bring alcoholic beverages. 
+                (There are also more 
+                <a href="https://parks.ny.gov/documents/parks/RiverbankPICNICPicnicInformationandRulesAgreement2025.pdf">rules</a>.)
             </p>
             <h2>
                 Registry
@@ -177,13 +192,20 @@
             </h3>
             <p>
                 Parking is available, but it's underneath the park. You may be able to find on-street parking in
-                the area, but if you can't or want to park under the park, you can get a parking permit from the attendant at 
-                the entrance booth, and theres a shuttle from the parking lot back to the park.
+                the area, but if you can't or want to park under the park, <strong>you must get a parking permit from the attendant at 
+                the 145th street entrance booth</strong>, and theres a shuttle from the parking lot back to the park (both are free).
+
+                
             </p>
+            <p>
+                <a href="https://maps.app.goo.gl/HzvX7XpQbSB5pQVt8">Google map directions to get from the entrance booth to the parking lot.</a>
+            </p>
+
         </div>
         <h2>
             Where to pee
         </h2>
+        <p>There's a rec facility in the center of the park that has bathrooms near the bus drop off.</p>
         <div>
             <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d734.4110186821167!2d-73.95644662092312!3d40.8265529894681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f66196bbf63f%3A0x7079f57784ba2831!2sRiverbank%20State%20Park!5e1!3m2!1sen!2sus!4v1748143246009!5m2!1sen!2sus" 
                 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
